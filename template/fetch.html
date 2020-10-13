@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body><center>
+    <h1><u>Retrieved Data From Database</u></h1>
+    <table border="5px" style="border:solid black;text-align:center;">
+        <tr><th>Name</th><th>Branch</th><th>Age</th><th>Option 1</th><th>Option 2</th></tr>
+        {% for datas in data %}
+        <tr><td>{{datas.name}}</td><td>{{datas.branch}}</td><td>{{datas.age}}</td><td><a href="edit/{{datas.id}}"><input type="button" value="Edit"></a></td><td><a href="delete/{{datas.id}}"><input type="button" value="Delete"></a></td></tr>
+        {% endfor %}
+    </table>
+    <a href="/" style="text-decoration:none;"><h1>Add Student</h1></a>
+</center>
+</body>
+</html>

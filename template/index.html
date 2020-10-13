@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body><center>
+    <form action="add" method="post"> 
+        {% csrf_token %}
+        <table style="border:solid black;text-align:center">
+            <h1><u>Add Data On The Database</u></h1>
+            <tr><th>Enter name : </th><td><input type="text" name="name" required></td></tr>
+            <tr><th>Enter branch : </th><td><input type="text" name="branch" required></td></tr>
+            <tr><th>Enter age : </th><td><input type="number" name="age" required></td></tr>
+            <tr><th></th><td><input type="submit" value="Add"></td></tr>
+        </table>
+    </form><br>
+    {% for message in messages %}
+    <div><h1>{{message}}</h1></div>
+    {% endfor %}
+    <br><br>
+    <a href="fetch" style="text-decoration:none;"><h1>Fetch_Data</h1></a>
+</center>
+</body>
+</html>

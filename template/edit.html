@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form action="/update" method="post"> 
+            {% csrf_token %}
+            <table style="border:solid black;text-align:center">
+                <h1><u>Edit Data On The Database</u></h1>
+                <input type="hidden" name="id" value="{{edit_data.id}}" required>
+                <tr><th>Enter name : </th><td><input type="text" name="name" value="{{edit_data.name}}" required></td></tr>
+                <tr><th>Enter branch : </th><td><input type="text" name="branch" value="{{edit_data.branch}}" required></td></tr>
+                <tr><th>Enter age : </th><td><input type="number" name="age" value="{{edit_data.age}}" required></td></tr>
+                <tr><th></th><td><input type="submit" value="Update"></td></tr>
+            </table>
+        </form><br>
+    </center>
+</body>
+</html>
